@@ -6,7 +6,15 @@ block content
   section.content
     .phone-title
       .phone
+        .phone-bg
+        video(loop onclick="this.play()")
+          source(src="assets/placeholder.mp4" type="video/mp4")
+          source(src="assets/placeholder.webm" type="video/webm")
+
       .title
+        span.title-part-1
+        span.title-part-2
+        span.title-part-3
       
   include includes/nav.pug
   include includes/social.pug

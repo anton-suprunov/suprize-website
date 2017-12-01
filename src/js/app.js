@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import _ from 'lodash';
 
 const onDomReady = () => {
   var logo = $('.logo__img'),
@@ -15,27 +16,37 @@ const onDomReady = () => {
 
   twemoji.parse(document.body);
 
-  if (window.innerWidth < 768) {
-    $('.nav__li_has-dropdown .nav__link')
-      .on('click', function (e) {
-        e.preventDefault();
-        var el = $(this).parent();
-
-        if (el.hasClass('nav__li_has-dropdown_active')) {
-          el.removeClass('nav__li_has-dropdown_active');
-        } else {
-          el.addClass('nav__li_has-dropdown_active');
-        }
-      });
-  }
-  
-  function animate(selector) {
-    var el = document.querySelector(selector);
-    if (!el) return;
-    el.className = el.className + ' animated_in';
+  if (window.innerWidth > 768) {
+    $('.phone video').get(0).play();
   }
 
+  $('.phone-bg').on('click', function () {
+    $('.phone video').get(0).play();
+  })
+
+  dynamicStuff();
+  $(window).on('resize orientationchange', _.debounce(dynamicStuff, 200));
 };
+
+function dynamicStuff() {
+  console.log('sdfafdf');
+  if (window.innerWidth < 768) {
+    $('.phone video').css({
+      width: $('.phone').width() - 22,
+      height: $('.phone').height() - 16
+    });
+    $('.phone').css('width', '');
+    $('.title').css('width', '');
+
+  } else {
+    $('.phone').css('width', $('.phone').height() * 0.487);
+    $('.title').css('width', $('.title').height() * 1.63);
+    $('.phone video').css({
+      width: $('.phone').width() - 10,
+      height: $('.phone').height() - 10
+    })
+  }
+}
 
 
 $(onDomReady);

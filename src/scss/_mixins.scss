@@ -28,3 +28,14 @@
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@mixin fadeIn($delay: 0.5s) {
+  animation: 0.3s ease-in $delay fadeIn;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
