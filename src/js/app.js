@@ -14,7 +14,7 @@ const onDomReady = () => {
     nav.removeClass('nav_hovered');
   });
 
-  twemoji.parse(document.body);
+  //twemoji.parse(document.body);
 
   if (window.innerWidth > 768) {
     $('.phone video').get(0).play();
@@ -29,7 +29,6 @@ const onDomReady = () => {
 };
 
 function dynamicStuff() {
-  console.log('sdfafdf');
   if (window.innerWidth < 768) {
     $('.phone video').css({
       width: $('.phone').width() - 22,
