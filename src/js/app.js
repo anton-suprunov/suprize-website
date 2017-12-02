@@ -30,20 +30,20 @@ const onDomReady = () => {
 
 function dynamicStuff() {
   if (window.innerWidth < 768) {
-    $('.phone video').css({
+    /*$('.phone video').css({
       width: $('.phone').width() - 22,
       height: $('.phone').height() - 16
-    });
+    });*/
     $('.phone').css('width', '');
     $('.title').css('width', '');
 
   } else {
     $('.phone').css('width', $('.phone').height() * 0.487);
     $('.title').css('width', $('.title').height() * 1.63);
-    $('.phone video').css({
+    /*$('.phone video').css({
       width: $('.phone').width() - 10,
       height: $('.phone').height() - 10
-    })
+    })*/
   }
 }
 

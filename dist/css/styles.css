@@ -1142,9 +1142,7 @@ body {
 .phone {
   display: block;
   position: relative;
-  height: 125%;
-  border-radius: 37px;
-  overflow: hidden; }
+  height: 125%; }
   .phone .phone-bg {
     content: "";
     background-image: url(../img/phone-bg.png);
@@ -1180,10 +1178,23 @@ body {
       .phone .phone-bg {
         display: none; } }
   .phone video {
-    position: absolute;
-    left: 5px;
-    top: 5px;
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
     z-index: 1; }
+
+.phone-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 15%;
+  overflow: hidden; }
+  @media (max-width: 480px) {
+    .phone-video {
+      border-radius: 0;
+      overflow: visible; } }
 
 .title {
   display: block;
